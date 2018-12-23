@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  {% if title %}
+      <title>Crystal's Portfolio - {{ title }}</title>
+  {% else %}
+      <title>Crystal's Portfolio</title>
+  {% endif %}
+
+
+
+
+</head>
+<body>
+
+
+<center><p>Hello! My name is Crystal Yip and this is a virtual portfolio of my traditional and digital artworks. Please feel free to scroll around. Thank you!</p></center>
+  <center> <img src="{{ url_for('static',filename="logo.png")}}"</center>
+  {% for post in posts %}
+    <center><h1>{{ post.title }}</h1></center>
+    <center> <img src="{{ url_for('static',filename="move.gif")}}"</center>
+    <center><p>By {{ post.artist }} on {{ post.date_posted }}</p></center>
+    <center><p>{{ post.content}}</p></center>
+    <P> <img src="{{ url_for('static',filename="art2.png")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art3.jpg")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art1.png")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art4.jpg")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art5.png")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art7.gif")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art8.jpg")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art9.jpg")}}"</P>
+    <P> <img src="{{ url_for('static',filename="art10.png")}}"</P>
+  {% endfor %}
+
+
+</body>
+</html>
